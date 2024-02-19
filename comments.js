@@ -1,6 +1,12 @@
 // create web server
-const express = require('express');
-const router = express.Router();
-const commentController = require('../controllers/comments');
+const http = require("http");
 
-router.get('/', commentController);
+const host = 'localhost';
+const port = 8000;
+
+const requestListener = function (req, res) {};
+
+const server = http.createServer(requestListener);
+server.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
+});
